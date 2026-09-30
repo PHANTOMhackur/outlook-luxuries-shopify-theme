@@ -1,14 +1,111 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
-    "hero": {"type":"hero","settings":{}},
-    "categories": {"type":"category-cards","settings":{},"blocks":{"perfume":{"type":"category","settings":{"kicker":"01","title":"Perfumes","cta":"Explore Perfumes","link":"/pages/perfumes"}},"attar":{"type":"category","settings":{"kicker":"02","title":"Attars","cta":"Explore Attars","link":"/pages/attars"}}}},
-    "brands": {"type":"brand-grid","settings":{},"blocks":{"brand1":{"type":"brand","settings":{"title":"Brand One"}},"brand2":{"type":"brand","settings":{"title":"Brand Two"}},"brand3":{"type":"brand","settings":{"title":"Brand Three"}},"brand4":{"type":"brand","settings":{"title":"Brand Four"}}}},
-    "best": {"type":"product-grid","settings":{"heading":"Bestsellers","products_to_show":4}},
-    "notes": {"type":"notes-grid","settings":{}},
-    "feature": {"type":"feature-split","settings":{}},
-    "new": {"type":"product-grid","settings":{"heading":"New arrivals","products_to_show":4}},
-    "reviews": {"type":"testimonials","settings":{}},
-    "newsletter": {"type":"newsletter","settings":{}}
+    "hero": {
+      "type": "hero",
+      "settings": {
+        "eyebrow": "THE ART OF FRAGRANCE",
+        "heading": "Find a fragrance that feels like you.",
+        "subtext": "Curated perfumes and traditional attars from sought-after fragrance houses.",
+        "primary_link": "",
+        "primary_label": "Shop Perfumes",
+        "secondary_link": "",
+        "secondary_label": "Explore Attars"
+      }
+    },
+    "categories": {
+      "type": "category-cards",
+      "blocks": {
+        "category_6xckPQ": {
+          "type": "category",
+          "settings": {
+            "kicker": "01",
+            "title": "Perfumes",
+            "cta": "Explore",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "category_6xckPQ"
+      ],
+      "settings": {
+        "heading": "Discover fragrance"
+      }
+    },
+    "brands": {
+      "type": "brand-grid",
+      "settings": {
+        "heading": "Shop by brand",
+        "link": ""
+      }
+    },
+    "best": {
+      "type": "product-grid",
+      "settings": {
+        "heading": "Bestsellers",
+        "collection": "",
+        "products_to_show": 4,
+        "link": ""
+      }
+    },
+    "notes": {
+      "type": "notes-grid",
+      "settings": {
+        "heading": "Shop by fragrance notes"
+      }
+    },
+    "feature": {
+      "type": "feature-split",
+      "settings": {
+        "eyebrow": "WHY SHOP WITH US",
+        "heading": "A better way to discover fragrance.",
+        "text": "<p>Curated brands, transparent product details and a premium shopping experience built for fragrance lovers.</p>",
+        "label": "Learn more",
+        "link": "",
+        "reverse": false
+      }
+    },
+    "new": {
+      "type": "product-grid",
+      "settings": {
+        "heading": "New arrivals",
+        "collection": "",
+        "products_to_show": 4,
+        "link": ""
+      }
+    },
+    "reviews": {
+      "type": "testimonials",
+      "settings": {
+        "heading": "Loved by fragrance lovers"
+      }
+    },
+    "newsletter": {
+      "type": "newsletter",
+      "settings": {
+        "heading": "Enter the world of scent.",
+        "text": "New arrivals, private offers and fragrance stories delivered to your inbox."
+      }
+    }
   },
-  "order": ["hero","categories","brands","best","notes","feature","new","reviews","newsletter"]
+  "order": [
+    "hero",
+    "categories",
+    "brands",
+    "best",
+    "notes",
+    "feature",
+    "new",
+    "reviews",
+    "newsletter"
+  ]
 }
