@@ -1,96 +1,155 @@
-# Outlook Luxuries — Unified Shopify Theme (VS Code / GitHub)
+# Outlook Luxuries — Complete Shopify Theme
 
-This is the **single merged codebase** for the Outlook Luxuries Shopify theme. It combines the cumulative work from V1, V2 and V3 into one project so development can continue in VS Code and GitHub instead of maintaining separate ZIP versions.
+A single Shopify Online Store 2.0 codebase for a premium multi-brand fragrance store focused on **Perfumes + Attars**.
 
-## What is included
+The project is designed for **VS Code + GitHub + Shopify CLI**. It replaces the earlier V1/V2/V3 ZIP workflow with one master codebase.
 
-### Global
-- Announcement bar
-- Responsive header
+## Included storefront
+
+### Global experience
+- Sticky premium header
 - Desktop mega menus for Perfumes, Attars and Brands
 - Mobile slide-out navigation with accordions
-- Search, account and cart links
-- Cart count
+- Search, account and cart actions
+- AJAX quick add
+- AJAX product add-to-cart
+- Cart drawer
+- Cart page quantity controls
+- Announcement bar
 - Responsive footer
-- Product card snippet
+- Accessible skip link and keyboard Escape handling
+- Mobile filter drawer
+- Site toast notifications
 
-### Homepage
-- Hero banner
-- Perfume / Attar category cards
-- Brand grid
-- Product grids
+### Home
+- Hero
+- Perfume + Attar category cards
+- Featured brand grid
+- Bestseller product grid
 - Fragrance notes grid
 - Editorial feature split
+- New arrivals
 - Testimonials
 - Newsletter
 
-### Perfumes / Attars / Brands
-- Category landing hero
-- Brand directory
+### Discovery
+- Perfumes landing page
+- Attars landing page
+- Master Brands directory
 - A–Z brand navigation
-- Buying guide
-- Dedicated `page.perfumes.json`, `page.attars.json`, and `page.brands.json` templates
+- Collection directory
+- Generic page templates
+- Offers page template
 
-### Developer setup
-- VS Code workspace settings
-- Recommended Shopify/Liquid extensions
-- Git-ready `.gitignore`
-- Store architecture notes in `docs/`
+### Commerce
+- Collection product listing
+- Shopify filters + price filter
+- Sorting
+- Pagination
+- Product media gallery
+- Product variants
+- Quantity selector
+- Dynamic checkout option
+- Product detail accordions
+- Related products
+- Search results + pagination
+- Cart page
+- Cart drawer
+- Gift card page
 
-## Theme structure
+### Content
+- Contact page
+- FAQ page
+- About
+- Shipping
+- Returns
+- Privacy
+- Terms
+- Blog index
+- Article page
+- 404 page
+- Password page
 
-```text
-assets/
-config/
-layout/
-locales/
-sections/
-snippets/
-templates/
-.vscode/
-docs/
-```
+### Customer accounts
+- Login
+- Register
+- Recover password
+- Reset password
+- Activate account
+- Account dashboard
+- Order history
+- Order detail
+- Addresses
 
 ## Shopify setup
 
-1. Create a Shopify Page with handle `perfumes` and assign the `perfumes` template.
-2. Create a Shopify Page with handle `attars` and assign the `attars` template.
-3. Create a Shopify Page with handle `brands` and assign the `brands` template.
-4. Create one Shopify collection for each fragrance brand.
-5. Connect brand directory blocks to the appropriate collections.
-6. Configure the Header section menus from Shopify Navigation.
-7. Add your real product imagery, pricing, descriptions and fragrance details.
+1. Upload/connect this theme from GitHub or upload the ZIP.
+2. Create the Pages listed in `docs/BUILD-MANIFEST.md` and assign their templates.
+3. Create one Shopify collection per fragrance brand.
+4. Connect Brand Directory blocks to those collections.
+5. Add real products, imagery, pricing, variants and descriptions.
+6. Configure Shopify Navigation menus for the Header.
+7. Configure Shopify Search & Discovery filters if required.
+8. Add your legal/contact copy and store details.
+9. Test checkout, customer accounts, search, filters and mobile navigation before publishing.
 
-## Git workflow
+## VS Code
+
+Open the extracted project root directly:
 
 ```text
-main          = stable / production
-   ↑
-development   = active store development
-   ↑
-feature/*     = individual features
+outlook-luxuries-complete/
+├── assets/
+├── config/
+├── docs/
+├── layout/
+├── locales/
+├── sections/
+├── snippets/
+├── templates/
+├── .gitignore
+├── .shopifyignore
+├── .theme-check.yml
+└── README.md
 ```
 
-Example:
+## Git
+
+Recommended:
+
+```text
+main         = stable production
+          ↑
+development  = active development
+          ↑
+feature/*    = individual features
+```
+
+Typical flow:
 
 ```bash
-git init
+git checkout development
+git pull
+git checkout -b feature/my-change
+# edit in VS Code
 git add .
-git commit -m "Initial Outlook Luxuries theme"
-git branch -M main
-git remote add origin YOUR_GITHUB_REPO_URL
-git push -u origin main
-
-git checkout -b development
+git commit -m "Describe the change"
+git checkout development
+git merge feature/my-change
+git push origin development
 ```
 
 ## Shopify CLI
-
-Use Shopify CLI for local theme development and validation. Typical commands include:
 
 ```bash
 shopify theme check
 shopify theme dev --store YOUR-STORE.myshopify.com
 ```
 
-Do not commit store credentials or `.env` files.
+Keep credentials out of Git. Do not commit `.env` or store secrets.
+
+## Important
+
+This is a code-complete storefront foundation, not a product/content import. Real brand names, product images, pricing, collections, policies, menus, contact details and shipping settings must be configured in your Shopify admin.
+
+See `docs/BUILD-MANIFEST.md` and `docs/STORE-ARCHITECTURE.md` for the full setup map.

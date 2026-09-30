@@ -1,0 +1,48 @@
+<section class="page-width section-space olx-collection">
+  <div class="breadcrumbs"><a href="{{ routes.root_url }}">Home</a><span>/</span><span>{{ collection.title }}</span></div>
+  <div class="collection-head">
+    <div><p class="eyebrow">{{ section.settings.eyebrow }}</p><h1>{{ collection.title }}</h1>{% if collection.description != blank %}<div class="rte">{{ collection.description }}</div>{% endif %}</div>
+    <div class="collection-count">{{ collection.products_count }} products</div>
+  </div>
+  <div class="olx-toolbar">
+    <button class="button button--dark olx-filter-open" type="button" data-filter-open>Filter & sort</button>
+    <div class="olx-toolbar__left">{% if collection.current_vendor %}Vendor: {{ collection.current_vendor }}{% endif %}{% if collection.current_type %} · {{ collection.current_type }}{% endif %}</div>
+    <form class="olx-sort" method="get">
+      <label for="CollectionSort">Sort by</label>
+      <select id="CollectionSort" name="sort_by" onchange="this.form.submit()">
+        {% for option in collection.sort_options %}<option value="{{ option.value }}" {% if option.value == collection.sort_by %}selected{% endif %}>{{ option.name }}</option>{% endfor %}
+      </select>
+    </form>
+  </div>
+  {% paginate collection.products by section.settings.products_per_page %}
+    <div class="olx-collection-layout">
+      <aside class="olx-filters" data-filter-panel>
+        <div class="olx-filters__head"><strong>Filter</strong><button type="button" data-filter-close aria-label="Close filters">×</button></div>
+        <form method="get">
+          {% for filter in collection.filters %}
+            <details class="olx-filter-group" {% if filter.active_values.size > 0 %}open{% endif %}>
+              <summary>{{ filter.label }} <span>+</span></summary>
+              {% if filter.type == 'price_range' %}
+                <div class="olx-price-fields"><input type="number" min="0" name="{{ filter.min_value.param_name }}" placeholder="Min" value="{% if filter.min_value.value %}{{ filter.min_value.value | money_without_currency | replace: ',', '' }}{% endif %}"><input type="number" min="0" name="{{ filter.max_value.param_name }}" placeholder="Max" value="{% if filter.max_value.value %}{{ filter.max_value.value | money_without_currency | replace: ',', '' }}{% endif %}"></div>
+              {% else %}
+                <div class="olx-filter-values">
+                  {% for value in filter.values %}
+                    <a class="olx-filter-value {% if value.active %}is-active{% endif %}{% if value.count == 0 and value.active == false %} is-disabled{% endif %}" href="{% if value.active %}{{ value.url_to_remove }}{% else %}{{ value.url_to_add }}{% endif %}"><span class="olx-check">{% if value.active %}✓{% endif %}</span><span>{{ value.label }}</span><small>{{ value.count }}</small></a>
+                  {% endfor %}
+                </div>
+              {% endif %}
+            </details>
+          {% endfor %}
+          <div class="olx-filter-actions"><a href="{{ collection.url }}" class="text-link">Clear all</a><button class="button button--dark button--full">Apply filters</button></div>
+        </form>
+      </aside>
+      <div class="olx-results">
+        <div class="product-grid">{% for product in collection.products %}{% render 'product-card', product: product %}{% else %}<div class="empty-state"><h2>No products found</h2><p>Try another filter or browse the complete collection.</p></div>{% endfor %}</div>
+        {% if paginate.pages > 1 %}<nav class="pagination" aria-label="Collection pagination">{% if paginate.previous %}<a href="{{ paginate.previous.url }}">←</a>{% endif %}{% for part in paginate.parts %}{% if part.is_link %}<a href="{{ part.url }}">{{ part.title }}</a>{% else %}<span class="is-current">{{ part.title }}</span>{% endif %}{% endfor %}{% if paginate.next %}<a href="{{ paginate.next.url }}">→</a>{% endif %}</nav>{% endif %}
+      </div>
+    </div>
+  {% endpaginate %}
+</section>
+{% schema %}
+{"name":"Collection","settings":[{"type":"text","id":"eyebrow","label":"Eyebrow","default":"CURATED COLLECTION"},{"type":"range","id":"products_per_page","label":"Products per page","min":12,"max":48,"step":4,"default":24}]}
+{% endschema %}

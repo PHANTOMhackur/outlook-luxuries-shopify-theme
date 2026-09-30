@@ -1,0 +1,32 @@
+<section class="page-width section-space olx-product">
+  <div class="breadcrumbs"><a href="{{ routes.root_url }}">Home</a><span>/</span>{% if collection %}<a href="{{ collection.url }}">{{ collection.title }}</a><span>/</span>{% endif %}<span>{{ product.title }}</span></div>
+  <div class="olx-product-layout">
+    <div class="olx-gallery">
+      <div class="olx-gallery__thumbs">{% for media in product.media %}<button type="button" class="olx-thumb {% if forloop.first %}is-active{% endif %}" data-media-thumb="{{ media.id }}">{{ media.preview_image | image_url: width: 180 | image_tag: loading: 'lazy', widths: '90,140,180', sizes: '68px', alt: media.alt | escape }}</button>{% endfor %}</div>
+      <div class="olx-gallery__main">{% for media in product.media %}<div class="olx-media {% if forloop.first %}is-active{% endif %}" data-media-panel="{{ media.id }}">{% case media.media_type %}{% when 'image' %}{{ media | image_url: width: 1500 | image_tag: loading: 'eager', widths: '600,900,1200,1500', sizes: '(min-width: 990px) 55vw, 100vw', alt: media.alt | escape }}{% when 'video' %}{{ media | video_tag: controls: true, image_size: '1200x' }}{% when 'external_video' %}{{ media | external_video_tag }}{% when 'model' %}{{ media | model_viewer_tag }}{% endcase %}</div>{% else %}<div class="media-placeholder"></div>{% endfor %}</div>
+    </div>
+    <div class="olx-product-info">
+      {% if product.vendor != blank %}<p class="product-card__vendor">{{ product.vendor }}</p>{% endif %}
+      <h1>{{ product.title }}</h1>
+      {% if product.metafields.custom.fragrance_family != blank %}<p class="product-card__meta">{{ product.metafields.custom.fragrance_family }}</p>{% endif %}
+      <div class="olx-product-price">{{ product.price | money }}{% if product.compare_at_price > product.price %}<del>{{ product.compare_at_price | money }}</del>{% endif %}</div>
+      {% if product.description != blank %}<div class="rte olx-product-description">{{ product.description }}</div>{% endif %}
+      {% form 'product', product, id: 'ProductForm-' | append: section.id, class: 'olx-product-form' %}
+        {% unless product.has_only_default_variant %}<div class="olx-options">{% for option in product.options_with_values %}<fieldset><legend>{{ option.name }}</legend><div class="olx-option-values">{% for value in option.values %}<label><input type="radio" name="options[{{ option.name | escape }}]" value="{{ value | escape }}" {% if option.selected_value == value %}checked{% endif %}><span>{{ value }}</span></label>{% endfor %}</div></fieldset>{% endfor %}</div>{% endunless %}
+        <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+        <div class="olx-add-row"><div class="quantity"><button type="button" data-minus>−</button><input type="number" name="quantity" min="1" value="1"><button type="button" data-plus>+</button></div><button type="submit" class="button button--dark" {% unless product.available %}disabled{% endunless %}>{% if product.available %}Add to bag{% else %}Sold out{% endif %}</button></div>
+        {% if section.settings.show_dynamic_checkout and product.available %}{{ form | payment_button }}{% endif %}
+      <script type="application/json" data-product-variants>{{ product.variants | json }}</script>
+      {% endform %}
+      <div class="olx-accordion">
+        <details open><summary>Fragrance details <span>+</span></summary><div class="rte"><p><strong>Notes:</strong> {{ product.metafields.custom.fragrance_notes | default: 'Use the product description or add a custom fragrance notes metafield.' }}</p><p><strong>Concentration:</strong> {{ product.metafields.custom.concentration | default: 'Add via product metafield when available.' }}</p></div></details>
+        <details><summary>Shipping & returns <span>+</span></summary><div class="rte"><p>Shipping methods, delivery estimates and return rules are shown according to your store settings and destination.</p></div></details>
+        <details><summary>Need help choosing? <span>+</span></summary><div class="rte"><p>Use our fragrance notes, brand collections and contact page to narrow down your choice.</p></div></details>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section-space olx-recommendations"><div class="page-width"><div class="section-heading"><div><p class="eyebrow">COMPLETE THE RITUAL</p><h2>You may also like</h2></div></div><div class="product-grid">{% assign related = collection | default: collections.all %}{% for p in related.products limit: 4 %}{% unless p.id == product.id %}{% render 'product-card', product: p %}{% endunless %}{% endfor %}</div></div></section>
+{% schema %}
+{"name":"Product","settings":[{"type":"checkbox","id":"show_dynamic_checkout","label":"Show dynamic checkout","default":false}]}
+{% endschema %}

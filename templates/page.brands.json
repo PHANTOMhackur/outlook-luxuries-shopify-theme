@@ -1,6 +1,163 @@
 {
   "sections": {
-    "main": {"type":"brand-grid","settings":{"heading":"All fragrance houses"},"blocks":{"b1":{"type":"brand","settings":{"title":"Brand One"}},"b2":{"type":"brand","settings":{"title":"Brand Two"}},"b3":{"type":"brand","settings":{"title":"Brand Three"}},"b4":{"type":"brand","settings":{"title":"Brand Four"}},"b5":{"type":"brand","settings":{"title":"Brand Five"}},"b6":{"type":"brand","settings":{"title":"Brand Six"}}}}
+    "hero": {
+      "type": "category-landing-hero",
+      "settings": {
+        "heading": "Fragrance houses worth discovering",
+        "eyebrow": "THE HOUSES",
+        "text": "Browse every brand, then jump straight into its collection.",
+        "primary_label": "Shop perfumes",
+        "primary_link": "/pages/perfumes",
+        "secondary_label": "Shop attars",
+        "secondary_link": "/pages/attars"
+      }
+    },
+    "brands": {
+      "type": "brand-directory",
+      "settings": {
+        "eyebrow": "ALL HOUSES",
+        "heading": "Browse all brands",
+        "subtext": "Search or jump by letter to find a fragrance house.",
+        "show_alphabet": true,
+        "shop_all_label": "Shop all",
+        "shop_all_link": "/collections/all"
+      },
+      "blocks": {
+        "b1": {
+          "type": "brand",
+          "settings": {
+            "title": "Brand 01",
+            "caption": "Explore brand"
+          }
+        },
+        "b2": {
+          "type": "brand",
+          "settings": {
+            "title": "Brand 02",
+            "caption": "Explore brand"
+          }
+        },
+        "b3": {
+          "type": "brand",
+          "settings": {
+            "title": "Brand 03",
+            "caption": "Explore brand"
+          }
+        },
+        "b4": {
+          "type": "brand",
+          "settings": {
+            "title": "Brand 04",
+            "caption": "Explore brand"
+          }
+        },
+        "b5": {
+          "type": "brand",
+          "settings": {
+            "title": "Brand 05",
+            "caption": "Explore brand"
+          }
+        },
+        "b6": {
+          "type": "brand",
+          "settings": {
+            "title": "Brand 06",
+            "caption": "Explore brand"
+          }
+        },
+        "b7": {
+          "type": "brand",
+          "settings": {
+            "title": "Brand 07",
+            "caption": "Explore brand"
+          }
+        },
+        "b8": {
+          "type": "brand",
+          "settings": {
+            "title": "Brand 08",
+            "caption": "Explore brand"
+          }
+        },
+        "b9": {
+          "type": "brand",
+          "settings": {
+            "title": "Brand 09",
+            "caption": "Explore brand"
+          }
+        },
+        "b10": {
+          "type": "brand",
+          "settings": {
+            "title": "Brand 10",
+            "caption": "Explore brand"
+          }
+        },
+        "b11": {
+          "type": "brand",
+          "settings": {
+            "title": "Brand 11",
+            "caption": "Explore brand"
+          }
+        },
+        "b12": {
+          "type": "brand",
+          "settings": {
+            "title": "Brand 12",
+            "caption": "Explore brand"
+          }
+        },
+        "b13": {
+          "type": "brand",
+          "settings": {
+            "title": "Brand 13",
+            "caption": "Explore brand"
+          }
+        },
+        "b14": {
+          "type": "brand",
+          "settings": {
+            "title": "Brand 14",
+            "caption": "Explore brand"
+          }
+        },
+        "b15": {
+          "type": "brand",
+          "settings": {
+            "title": "Brand 15",
+            "caption": "Explore brand"
+          }
+        },
+        "b16": {
+          "type": "brand",
+          "settings": {
+            "title": "Brand 16",
+            "caption": "Explore brand"
+          }
+        }
+      },
+      "block_order": [
+        "b1",
+        "b2",
+        "b3",
+        "b4",
+        "b5",
+        "b6",
+        "b7",
+        "b8",
+        "b9",
+        "b10",
+        "b11",
+        "b12",
+        "b13",
+        "b14",
+        "b15",
+        "b16"
+      ]
+    }
   },
-  "order":["main"]
+  "order": [
+    "hero",
+    "brands"
+  ]
 }

@@ -1,0 +1,39 @@
+<section class="page-width section-space olx-search">
+  <div class="collection-head"><div><p class="eyebrow">DISCOVER</p><h1>Search</h1></div></div>
+  <form class="search-form" action="{{ routes.search_url }}" method="get">
+    <input type="search" name="q" value="{{ search.terms | escape }}" placeholder="Search perfumes, attars, brands…" aria-label="Search products">
+    <button class="button button--dark" type="submit">Search</button>
+  </form>
+  {% if search.performed %}
+    <p class="collection-count">{{ search.results_count }} results</p>
+    {% paginate search.results by 24 %}
+      <div class="search-grid">
+        {% for result in search.results %}
+          {% if result.object_type == 'product' %}
+            {% render 'product-card', product: result %}
+          {% else %}
+            <a class="search-result" href="{{ result.url }}">
+              <small>{{ result.object_type }}</small>
+              <h3>{{ result.title }}</h3>
+              <p>{{ result.content | default: result.description | strip_html | truncatewords: 26 }}</p>
+            </a>
+          {% endif %}
+        {% else %}
+          <div class="empty-state"><h2>No results</h2><p>Try another term, brand or fragrance note.</p></div>
+        {% endfor %}
+      </div>
+      {% if paginate.pages > 1 %}
+        <nav class="pagination" aria-label="Search pagination">
+          {% if paginate.previous %}<a href="{{ paginate.previous.url }}" aria-label="Previous page">←</a>{% endif %}
+          {% for part in paginate.parts %}
+            {% if part.is_link %}<a href="{{ part.url }}">{{ part.title }}</a>{% else %}<span class="is-current">{{ part.title }}</span>{% endif %}
+          {% endfor %}
+          {% if paginate.next %}<a href="{{ paginate.next.url }}" aria-label="Next page">→</a>{% endif %}
+        </nav>
+      {% endif %}
+    {% endpaginate %}
+  {% else %}
+    <div class="search-discover"><h2>Start with a category</h2><div class="button-row"><a href="/pages/perfumes" class="button button--dark">Perfumes</a><a href="/pages/attars" class="button button--outline">Attars</a><a href="/pages/brands" class="button button--outline">Brands</a></div></div>
+  {% endif %}
+</section>
+{% schema %}{"name":"Search"}{% endschema %}

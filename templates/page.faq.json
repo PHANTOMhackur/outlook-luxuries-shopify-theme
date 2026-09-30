@@ -1,0 +1,18 @@
+{
+  "sections": {
+    "main": {
+      "type": "faq",
+      "settings": {},
+      "blocks": {
+        "q1": {"type":"faq","settings":{"question":"How do I choose between perfume and attar?","answer":"Perfumes are typically alcohol-based fragrance formats, while attars are concentrated perfume oils. Choose the format that fits how you like to wear fragrance."}},
+        "q2": {"type":"faq","settings":{"question":"How can I find a fragrance by brand?","answer":"Open Perfumes or Attars from the main menu, choose a brand from the directory, and browse that brand collection."}},
+        "q3": {"type":"faq","settings":{"question":"Are all products authentic?","answer":"Only list products you are authorized to sell and maintain your own authenticity and sourcing documentation for your catalogue."}},
+        "q4": {"type":"faq","settings":{"question":"How should I store fragrance?","answer":"Keep fragrance away from direct sunlight, heat and rapid temperature changes. A cool, dry place is generally suitable."}},
+        "q5": {"type":"faq","settings":{"question":"How long does delivery take?","answer":"Delivery estimates depend on destination, carrier and your store's shipping settings. The checkout and order confirmation should be treated as the final delivery reference."}},
+        "q6": {"type":"faq","settings":{"question":"How do returns work?","answer":"Returns depend on the policy published by the store and the condition of the product. Review the Returns page before ordering."}}
+      },
+      "block_order":["q1","q2","q3","q4","q5","q6"]
+    }
+  },
+  "order":["main"]
+}

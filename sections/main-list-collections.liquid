@@ -1,0 +1,25 @@
+<section class="page-width section-space olx-list-collections">
+  <div class="collection-head">
+    <div><p class="eyebrow">EXPLORE</p><h1>Shop by collection</h1><p class="rte">Explore fragrance houses, perfume edits and attar collections in one considered destination.</p></div>
+    <div class="collection-count">{{ collections.size }} collections</div>
+  </div>
+  <div class="collection-directory">
+    {% for collection in collections %}
+      {% unless collection.handle == 'frontpage' %}
+        <a class="collection-directory__card" href="{{ collection.url }}">
+          <div class="collection-directory__media">
+            {% if collection.featured_image %}
+              {{ collection.featured_image | image_url: width: 900 | image_tag: loading: 'lazy', widths: '420,650,900', sizes: '(min-width: 990px) 32vw, 50vw', alt: collection.title | escape }}
+            {% else %}
+              <span>{{ collection.title | slice: 0, 1 | upcase }}</span>
+            {% endif %}
+          </div>
+          <div class="collection-directory__body"><div><p>{{ collection.products_count }} products</p><h2>{{ collection.title }}</h2></div><span>→</span></div>
+        </a>
+      {% endunless %}
+    {% else %}
+      <div class="empty-state"><h2>No collections yet</h2><p>Create your perfume, attar and brand collections in Shopify to populate this page.</p></div>
+    {% endfor %}
+  </div>
+</section>
+{% schema %}{"name":"Collections list"}{% endschema %}

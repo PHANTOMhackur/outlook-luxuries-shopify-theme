@@ -3,11 +3,13 @@
     "hero": {
       "type": "category-landing-hero",
       "settings": {
-        "eyebrow": "THE PERFUME EDIT",
         "heading": "Discover perfumes by house",
-        "text": "Explore a curated selection of fragrance houses, from modern signatures to timeless classics.",
+        "eyebrow": "THE PERFUME EDIT",
+        "text": "Explore perfumes across the fragrance houses in your collection.",
         "primary_label": "Shop all perfumes",
-        "secondary_label": "Browse brands"
+        "secondary_label": "Browse brands",
+        "primary_link": "/collections/perfumes",
+        "secondary_link": "/pages/brands"
       }
     },
     "brands": {
@@ -17,21 +19,113 @@
         "heading": "Shop perfumes by brand",
         "subtext": "Choose a house to discover its signature perfumes, new releases and bestsellers.",
         "show_alphabet": true,
-        "shop_all_label": "View all perfumes"
+        "shop_all_label": "View all perfumes",
+        "shop_all_link": "/collections/perfumes"
       },
       "blocks": {
-        "b1": {"type":"brand","settings":{"title":"Brand One","caption":"Explore perfumes"}},
-        "b2": {"type":"brand","settings":{"title":"Brand Two","caption":"Explore perfumes"}},
-        "b3": {"type":"brand","settings":{"title":"Brand Three","caption":"Explore perfumes"}},
-        "b4": {"type":"brand","settings":{"title":"Brand Four","caption":"Explore perfumes"}},
-        "b5": {"type":"brand","settings":{"title":"Brand Five","caption":"Explore perfumes"}},
-        "b6": {"type":"brand","settings":{"title":"Brand Six","caption":"Explore perfumes"}},
-        "b7": {"type":"brand","settings":{"title":"Brand Seven","caption":"Explore perfumes"}},
-        "b8": {"type":"brand","settings":{"title":"Brand Eight","caption":"Explore perfumes"}}
-      }
+        "b1": {
+          "type": "brand",
+          "settings": {
+            "title": "Brand 01",
+            "caption": "Explore perfumes"
+          }
+        },
+        "b2": {
+          "type": "brand",
+          "settings": {
+            "title": "Brand 02",
+            "caption": "Explore perfumes"
+          }
+        },
+        "b3": {
+          "type": "brand",
+          "settings": {
+            "title": "Brand 03",
+            "caption": "Explore perfumes"
+          }
+        },
+        "b4": {
+          "type": "brand",
+          "settings": {
+            "title": "Brand 04",
+            "caption": "Explore perfumes"
+          }
+        },
+        "b5": {
+          "type": "brand",
+          "settings": {
+            "title": "Brand 05",
+            "caption": "Explore perfumes"
+          }
+        },
+        "b6": {
+          "type": "brand",
+          "settings": {
+            "title": "Brand 06",
+            "caption": "Explore perfumes"
+          }
+        },
+        "b7": {
+          "type": "brand",
+          "settings": {
+            "title": "Brand 07",
+            "caption": "Explore perfumes"
+          }
+        },
+        "b8": {
+          "type": "brand",
+          "settings": {
+            "title": "Brand 08",
+            "caption": "Explore perfumes"
+          }
+        },
+        "b9": {
+          "type": "brand",
+          "settings": {
+            "title": "Brand 09",
+            "caption": "Explore perfumes"
+          }
+        },
+        "b10": {
+          "type": "brand",
+          "settings": {
+            "title": "Brand 10",
+            "caption": "Explore perfumes"
+          }
+        },
+        "b11": {
+          "type": "brand",
+          "settings": {
+            "title": "Brand 11",
+            "caption": "Explore perfumes"
+          }
+        },
+        "b12": {
+          "type": "brand",
+          "settings": {
+            "title": "Brand 12",
+            "caption": "Explore perfumes"
+          }
+        }
+      },
+      "block_order": [
+        "b1",
+        "b2",
+        "b3",
+        "b4",
+        "b5",
+        "b6",
+        "b7",
+        "b8",
+        "b9",
+        "b10",
+        "b11",
+        "b12"
+      ]
     },
     "guide": {
-      "type": "category-buying-guide"
+      "type": "category-buying-guide",
+      "settings": {}
     },
     "featured": {
       "type": "product-grid",
@@ -41,5 +135,10 @@
       }
     }
   },
-  "order": ["hero", "brands", "guide", "featured"]
+  "order": [
+    "hero",
+    "brands",
+    "guide",
+    "featured"
+  ]
 }

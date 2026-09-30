@@ -3,16 +3,19 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
+{% if settings.favicon %}<link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: 64 }}">{% endif %}
     <link rel="canonical" href="{{ canonical_url }}">
     <title>{{ page_title }}{% if current_tags %} – {{ current_tags | join: ', ' }}{% endif %}{% unless page_title contains shop.name %} – {{ shop.name }}{% endunless %}</title>
     {% if page_description %}<meta name="description" content="{{ page_description | escape }}">{% endif %}
     {{ content_for_header }}
     {{ 'base.css' | asset_url | stylesheet_tag }}
-  </head>
+  <style>:root{--ink:{{ settings.text_color | default: '#171411' }};--paper:{{ settings.page_background | default: '#f7f3ec' }};--cream:{{ settings.accent_background | default: '#efe7da' }};--line:{{ settings.border_color | default: '#ddd4c8' }};} .button{border-radius:{{ settings.button_radius | default: '999' }}px;}</style>
+</head>
   <body class="template-{{ template.name | handle }}">
     <a class="skip-link" href="#MainContent">Skip to content</a>
     {% section 'announcement-bar' %}
     {% section 'header' %}
+    {% section 'cart-drawer' %}
     <main id="MainContent" role="main">{{ content_for_layout }}</main>
     {% section 'footer' %}
     {{ 'theme.js' | asset_url | script_tag }}

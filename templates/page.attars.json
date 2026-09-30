@@ -1,7 +1,147 @@
 {
   "sections": {
-    "main": {"type":"brand-grid","settings":{"heading":"Shop attars by brand"},"blocks":{"b1":{"type":"brand","settings":{"title":"Brand One"}},"b2":{"type":"brand","settings":{"title":"Brand Two"}},"b3":{"type":"brand","settings":{"title":"Brand Three"}},"b4":{"type":"brand","settings":{"title":"Brand Four"}}}},
-    "attars": {"type":"product-grid","settings":{"heading":"Featured attars","products_to_show":8}}
+    "hero": {
+      "type": "category-landing-hero",
+      "settings": {
+        "heading": "Discover attars by house",
+        "eyebrow": "THE ATTAR EDIT",
+        "text": "Explore concentrated fragrance oils, traditional craft and modern interpretations.",
+        "primary_label": "Shop all attars",
+        "secondary_label": "Browse brands",
+        "primary_link": "/collections/attars",
+        "secondary_link": "/pages/brands"
+      }
+    },
+    "brands": {
+      "type": "brand-directory",
+      "settings": {
+        "eyebrow": "CURATED ATTAR HOUSES",
+        "heading": "Shop attars by brand",
+        "subtext": "Choose a house to discover its concentrated fragrance oils.",
+        "show_alphabet": true,
+        "shop_all_label": "View all attars",
+        "shop_all_link": "/collections/attars"
+      },
+      "blocks": {
+        "b1": {
+          "type": "brand",
+          "settings": {
+            "title": "Brand 01",
+            "caption": "Explore attars"
+          }
+        },
+        "b2": {
+          "type": "brand",
+          "settings": {
+            "title": "Brand 02",
+            "caption": "Explore attars"
+          }
+        },
+        "b3": {
+          "type": "brand",
+          "settings": {
+            "title": "Brand 03",
+            "caption": "Explore attars"
+          }
+        },
+        "b4": {
+          "type": "brand",
+          "settings": {
+            "title": "Brand 04",
+            "caption": "Explore attars"
+          }
+        },
+        "b5": {
+          "type": "brand",
+          "settings": {
+            "title": "Brand 05",
+            "caption": "Explore attars"
+          }
+        },
+        "b6": {
+          "type": "brand",
+          "settings": {
+            "title": "Brand 06",
+            "caption": "Explore attars"
+          }
+        },
+        "b7": {
+          "type": "brand",
+          "settings": {
+            "title": "Brand 07",
+            "caption": "Explore attars"
+          }
+        },
+        "b8": {
+          "type": "brand",
+          "settings": {
+            "title": "Brand 08",
+            "caption": "Explore attars"
+          }
+        },
+        "b9": {
+          "type": "brand",
+          "settings": {
+            "title": "Brand 09",
+            "caption": "Explore attars"
+          }
+        },
+        "b10": {
+          "type": "brand",
+          "settings": {
+            "title": "Brand 10",
+            "caption": "Explore attars"
+          }
+        },
+        "b11": {
+          "type": "brand",
+          "settings": {
+            "title": "Brand 11",
+            "caption": "Explore attars"
+          }
+        },
+        "b12": {
+          "type": "brand",
+          "settings": {
+            "title": "Brand 12",
+            "caption": "Explore attars"
+          }
+        }
+      },
+      "block_order": [
+        "b1",
+        "b2",
+        "b3",
+        "b4",
+        "b5",
+        "b6",
+        "b7",
+        "b8",
+        "b9",
+        "b10",
+        "b11",
+        "b12"
+      ]
+    },
+    "guide": {
+      "type": "category-buying-guide",
+      "settings": {
+        "eyebrow": "ATTAR GUIDE",
+        "heading": "Shop attars your way"
+      }
+    },
+    "featured": {
+      "type": "product-grid",
+      "settings": {
+        "heading": "Featured attars",
+        "products_to_show": 8
+      }
+    }
   },
-  "order":["main","attars"]
+  "order": [
+    "hero",
+    "brands",
+    "guide",
+    "featured"
+  ]
 }
