@@ -49,21 +49,21 @@
                   <span class="mega-menu__column-title">Shop by type</span>
                   <div class="mega-menu__sub-links">
                     <a href="{{ section.settings.perfume_page_url | default: '/pages/perfumes' }}">All perfumes</a>
-                    <a href="/collections/bestsellers">Bestsellers</a>
-                    <a href="/collections/new-arrivals">New arrivals</a>
-                    <a href="/collections/men">Men</a>
-                    <a href="/collections/women">Women</a>
-                    <a href="/collections/unisex">Unisex</a>
+                    <a href="{{ routes.collections_url }}/bestsellers">Bestsellers</a>
+                    <a href="{{ routes.collections_url }}/new-arrivals">New arrivals</a>
+                    <a href="{{ routes.collections_url }}/men">Men</a>
+                    <a href="{{ routes.collections_url }}/women">Women</a>
+                    <a href="{{ routes.collections_url }}/unisex">Unisex</a>
                   </div>
                 </div>
                 <div class="mega-menu__column">
                   <span class="mega-menu__column-title">Fragrance families</span>
                   <div class="mega-menu__sub-links">
-                    <a href="/collections/oud">Oud</a>
-                    <a href="/collections/woody">Woody</a>
-                    <a href="/collections/floral">Floral</a>
-                    <a href="/collections/fresh">Fresh</a>
-                    <a href="/collections/amber">Amber</a>
+                    <a href="{{ routes.collections_url }}/oud">Oud</a>
+                    <a href="{{ routes.collections_url }}/woody">Woody</a>
+                    <a href="{{ routes.collections_url }}/floral">Floral</a>
+                    <a href="{{ routes.collections_url }}/fresh">Fresh</a>
+                    <a href="{{ routes.collections_url }}/amber">Amber</a>
                   </div>
                 </div>
               {% endif %}
@@ -122,18 +122,18 @@
                   <span class="mega-menu__column-title">Shop by style</span>
                   <div class="mega-menu__sub-links">
                     <a href="{{ section.settings.attar_page_url | default: '/pages/attars' }}">All attars</a>
-                    <a href="/collections/oud-attars">Oud attars</a>
-                    <a href="/collections/musk-attars">Musk attars</a>
-                    <a href="/collections/amber-attars">Amber attars</a>
-                    <a href="/collections/floral-attars">Floral attars</a>
+                    <a href="{{ routes.collections_url }}/oud-attars">Oud attars</a>
+                    <a href="{{ routes.collections_url }}/musk-attars">Musk attars</a>
+                    <a href="{{ routes.collections_url }}/amber-attars">Amber attars</a>
+                    <a href="{{ routes.collections_url }}/floral-attars">Floral attars</a>
                   </div>
                 </div>
                 <div class="mega-menu__column">
                   <span class="mega-menu__column-title">Discover</span>
                   <div class="mega-menu__sub-links">
-                    <a href="/collections/bestsellers">Bestsellers</a>
-                    <a href="/collections/new-arrivals">New arrivals</a>
-                    <a href="/collections/unisex">Unisex</a>
+                    <a href="{{ routes.collections_url }}/bestsellers">Bestsellers</a>
+                    <a href="{{ routes.collections_url }}/new-arrivals">New arrivals</a>
+                    <a href="{{ routes.collections_url }}/unisex">Unisex</a>
                     <a href="/pages/attars#brand-directory">By brand</a>
                   </div>
                 </div>
@@ -247,11 +247,11 @@
             {% endfor %}
           {% endfor %}
         {% else %}
-          <a href="/collections/bestsellers">Bestsellers</a>
-          <a href="/collections/new-arrivals">New arrivals</a>
-          <a href="/collections/men">Men</a>
-          <a href="/collections/women">Women</a>
-          <a href="/collections/unisex">Unisex</a>
+          <a href="{{ routes.collections_url }}/bestsellers">Bestsellers</a>
+          <a href="{{ routes.collections_url }}/new-arrivals">New arrivals</a>
+          <a href="{{ routes.collections_url }}/men">Men</a>
+          <a href="{{ routes.collections_url }}/women">Women</a>
+          <a href="{{ routes.collections_url }}/unisex">Unisex</a>
         {% endif %}
       </div>
     </details>
@@ -268,10 +268,10 @@
             {% endfor %}
           {% endfor %}
         {% else %}
-          <a href="/collections/oud-attars">Oud attars</a>
-          <a href="/collections/musk-attars">Musk attars</a>
-          <a href="/collections/amber-attars">Amber attars</a>
-          <a href="/collections/floral-attars">Floral attars</a>
+          <a href="{{ routes.collections_url }}/oud-attars">Oud attars</a>
+          <a href="{{ routes.collections_url }}/musk-attars">Musk attars</a>
+          <a href="{{ routes.collections_url }}/amber-attars">Amber attars</a>
+          <a href="{{ routes.collections_url }}/floral-attars">Floral attars</a>
         {% endif %}
       </div>
     </details>

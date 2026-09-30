@@ -18,6 +18,6 @@
     {% section 'cart-drawer' %}
     <main id="MainContent" role="main">{{ content_for_layout }}</main>
     {% section 'footer' %}
-    {{ 'theme.js' | asset_url | script_tag }}
+    <script src="{{ 'theme.js' | asset_url }}" defer="defer"></script>
   </body>
 </html>

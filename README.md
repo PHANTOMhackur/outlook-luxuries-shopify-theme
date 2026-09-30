@@ -153,3 +153,7 @@ Keep credentials out of Git. Do not commit `.env` or store secrets.
 This is a code-complete storefront foundation, not a product/content import. Real brand names, product images, pricing, collections, policies, menus, contact details and shipping settings must be configured in your Shopify admin.
 
 See `docs/BUILD-MANIFEST.md` and `docs/STORE-ARCHITECTURE.md` for the full setup map.
+
+## Validation
+
+Run `shopify theme check` before pushing changes.

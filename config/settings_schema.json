@@ -1,23 +1,106 @@
 [
-  {"name":"Theme info","theme_name":"Outlook Luxuries — Premium Fragrance Store","theme_version":"2.0.0","theme_author":"Outlook Luxuries"},
-  {"name":"Brand","settings":[
-    {"type":"text","id":"brand_name","label":"Brand name","default":"Outlook Luxuries"},
-    {"type":"image_picker","id":"logo","label":"Logo"},
-    {"type":"image_picker","id":"favicon","label":"Favicon"},
-    {"type":"range","id":"logo_width","label":"Logo width","min":80,"max":260,"step":5,"default":170}
-  ]},
-  {"name":"Colors","settings":[
-    {"type":"color","id":"page_background","label":"Page background","default":"#f7f3ec"},
-    {"type":"color","id":"text_color","label":"Text","default":"#171411"},
-    {"type":"color","id":"accent_background","label":"Accent background","default":"#efe7da"},
-    {"type":"color","id":"border_color","label":"Borders","default":"#ddd4c8"}
-  ]},
-  {"name":"Buttons","settings":[
-    {"type":"range","id":"button_radius","label":"Button radius","min":0,"max":999,"step":1,"default":999}
-  ]},
-  {"name":"Store details","settings":[
-    {"type":"text","id":"support_email","label":"Support email","default":"hello@outlookluxuries.com"},
-    {"type":"text","id":"support_phone","label":"Support phone","default":"+91 "},
-    {"type":"textarea","id":"store_address","label":"Store address","default":"Add your business address here."}
-  ]}
+  {
+    "name": "theme_info",
+    "theme_name": "Outlook Luxuries",
+    "theme_version": "1.0.0",
+    "theme_author": "Outlook Luxuries",
+    "theme_documentation_url": "https://outlookluxuries.com/pages/theme-guide",
+    "theme_support_email": "hello@outlookluxuries.com"
+  },
+  {
+    "name": "Brand",
+    "settings": [
+      {
+        "type": "text",
+        "id": "brand_name",
+        "label": "Brand name",
+        "default": "Outlook Luxuries"
+      },
+      {
+        "type": "image_picker",
+        "id": "logo",
+        "label": "Logo"
+      },
+      {
+        "type": "image_picker",
+        "id": "favicon",
+        "label": "Favicon"
+      },
+      {
+        "type": "range",
+        "id": "logo_width",
+        "label": "Logo width",
+        "min": 80,
+        "max": 260,
+        "step": 5,
+        "default": 170
+      }
+    ]
+  },
+  {
+    "name": "Colors",
+    "settings": [
+      {
+        "type": "color",
+        "id": "page_background",
+        "label": "Page background",
+        "default": "#f7f3ec"
+      },
+      {
+        "type": "color",
+        "id": "text_color",
+        "label": "Text",
+        "default": "#171411"
+      },
+      {
+        "type": "color",
+        "id": "accent_background",
+        "label": "Accent background",
+        "default": "#efe7da"
+      },
+      {
+        "type": "color",
+        "id": "border_color",
+        "label": "Borders",
+        "default": "#ddd4c8"
+      }
+    ]
+  },
+  {
+    "name": "Buttons",
+    "settings": [
+      {
+        "type": "range",
+        "id": "button_radius",
+        "label": "Button radius",
+        "min": 0,
+        "max": 999,
+        "step": 1,
+        "default": 999
+      }
+    ]
+  },
+  {
+    "name": "Store details",
+    "settings": [
+      {
+        "type": "text",
+        "id": "support_email",
+        "label": "Support email",
+        "default": "hello@outlookluxuries.com"
+      },
+      {
+        "type": "text",
+        "id": "support_phone",
+        "label": "Support phone",
+        "default": "+91 "
+      },
+      {
+        "type": "textarea",
+        "id": "store_address",
+        "label": "Store address",
+        "default": "Add your business address here."
+      }
+    ]
+  }
 ]
