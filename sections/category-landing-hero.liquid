@@ -1,0 +1,38 @@
+<section class="category-hero">
+  <div class="category-hero__media">
+    {% if section.settings.image != blank %}
+      {{ section.settings.image | image_url: width: 2200 | image_tag: loading: 'eager', widths: '900,1400,1800,2200', sizes: '100vw', class: 'category-hero__image' }}
+    {% else %}
+      <div class="category-hero__placeholder"></div>
+    {% endif %}
+    <div class="category-hero__overlay"></div>
+  </div>
+  <div class="page-width category-hero__inner">
+    <div class="category-hero__content">
+      {% if section.settings.eyebrow != blank %}<p class="eyebrow category-hero__eyebrow">{{ section.settings.eyebrow }}</p>{% endif %}
+      <h1>{{ section.settings.heading }}</h1>
+      {% if section.settings.text != blank %}<p class="category-hero__text">{{ section.settings.text }}</p>{% endif %}
+      <div class="button-row">
+        {% if section.settings.primary_link != blank %}<a class="button button--light" href="{{ section.settings.primary_link }}">{{ section.settings.primary_label }}</a>{% endif %}
+        {% if section.settings.secondary_link != blank %}<a class="button button--ghost" href="{{ section.settings.secondary_link }}">{{ section.settings.secondary_label }}</a>{% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Category landing hero",
+  "settings": [
+    {"type":"image_picker","id":"image","label":"Hero image"},
+    {"type":"text","id":"eyebrow","label":"Eyebrow","default":"THE PERFUME EDIT"},
+    {"type":"text","id":"heading","label":"Heading","default":"Discover perfumes by house"},
+    {"type":"textarea","id":"text","label":"Text","default":"Explore a curated selection of fragrance houses, from modern signatures to timeless classics."},
+    {"type":"text","id":"primary_label","label":"Primary button label","default":"Shop all perfumes"},
+    {"type":"url","id":"primary_link","label":"Primary button link"},
+    {"type":"text","id":"secondary_label","label":"Secondary button label","default":"Browse brands"},
+    {"type":"url","id":"secondary_link","label":"Secondary button link"}
+  ],
+  "presets":[{"name":"Category landing hero"}]
+}
+{% endschema %}

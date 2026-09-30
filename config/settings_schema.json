@@ -1,0 +1,5 @@
+[
+  {"name":"theme_info","theme_name":"Outlook Luxuries — Fragrance Store","theme_version":"1.0.0","theme_author":"Custom"},
+  {"name":"Brand","settings":[{"type":"text","id":"brand_name","label":"Brand name","default":"Outlook Luxuries"},{"type":"image_picker","id":"favicon","label":"Favicon"}]},
+  {"name":"Colors","settings":[{"type":"color","id":"page_background","label":"Page background","default":"#f7f3ec"},{"type":"color","id":"text_color","label":"Text","default":"#171411"}]}
+]

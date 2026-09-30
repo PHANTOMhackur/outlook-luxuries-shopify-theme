@@ -1,0 +1,9 @@
+<section class="notes-section section-space">
+  <div class="page-width"><div class="section-heading"><div><p class="eyebrow">FIND YOUR SIGNATURE</p><h2>{{ section.settings.heading }}</h2></div></div>
+  <div class="notes-grid">
+    {% for block in section.blocks %}<a href="{{ block.settings.link }}" class="note-card" {{ block.shopify_attributes }}>{% if block.settings.image != blank %}{{ block.settings.image | image_url: width: 900 | image_tag: loading: 'lazy' }}{% else %}<div class="note-art">{{ block.settings.title | slice: 0, 1 }}</div>{% endif %}<div><h3>{{ block.settings.title }}</h3><p>{{ block.settings.caption }}</p></div></a>{% endfor %}
+  </div></div>
+</section>
+{% schema %}
+{"name":"Notes grid","settings":[{"type":"text","id":"heading","label":"Heading","default":"Shop by fragrance notes"}],"blocks":[{"type":"note","name":"Note","settings":[{"type":"image_picker","id":"image","label":"Image"},{"type":"text","id":"title","label":"Title","default":"Oud"},{"type":"text","id":"caption","label":"Caption","default":"Deep · Warm · Refined"},{"type":"url","id":"link","label":"Link"}]}],"presets":[{"name":"Notes grid","blocks":[{"type":"note","settings":{"title":"Oud","caption":"Deep · Warm · Refined"}},{"type":"note","settings":{"title":"Floral","caption":"Soft · Elegant · Romantic"}},{"type":"note","settings":{"title":"Woody","caption":"Earthy · Smooth · Timeless"}},{"type":"note","settings":{"title":"Fresh","caption":"Clean · Bright · Effortless"}}]}]}
+{% endschema %}

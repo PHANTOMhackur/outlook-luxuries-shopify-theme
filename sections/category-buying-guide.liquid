@@ -1,0 +1,44 @@
+<section class="category-guide-section">
+  <div class="page-width section-space">
+    <div class="section-heading">
+      <div>
+        {% if section.settings.eyebrow != blank %}<p class="eyebrow">{{ section.settings.eyebrow }}</p>{% endif %}
+        <h2>{{ section.settings.heading }}</h2>
+      </div>
+    </div>
+    <div class="guide-grid">
+      {% for block in section.blocks %}
+        <a class="guide-card" href="{{ block.settings.link | default: '#' }}" {{ block.shopify_attributes }}>
+          <span class="guide-card__number">{{ forloop.index | prepend: '0' | slice: -2, 2 }}</span>
+          <div>
+            <h3>{{ block.settings.title }}</h3>
+            <p>{{ block.settings.text }}</p>
+          </div>
+          <span class="guide-card__arrow">→</span>
+        </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% schema %}
+{
+  "name":"Category buying guide",
+  "settings":[
+    {"type":"text","id":"eyebrow","label":"Eyebrow","default":"FIND YOUR SIGNATURE"},
+    {"type":"text","id":"heading","label":"Heading","default":"Shop perfumes your way"}
+  ],
+  "blocks":[
+    {"type":"guide","name":"Guide item","settings":[
+      {"type":"text","id":"title","label":"Title","default":"For every occasion"},
+      {"type":"textarea","id":"text","label":"Text","default":"Discover fragrances curated for your everyday and special moments."},
+      {"type":"url","id":"link","label":"Link"}
+    ]}
+  ],
+  "presets":[{"name":"Category buying guide","blocks":[
+    {"type":"guide","settings":{"title":"Everyday signatures","text":"Easy-to-wear perfumes for your daily rotation."}},
+    {"type":"guide","settings":{"title":"Evening & oud","text":"Richer compositions for nights, events and occasions."}},
+    {"type":"guide","settings":{"title":"Fresh & clean","text":"Bright, airy profiles for a crisp modern feel."}},
+    {"type":"guide","settings":{"title":"Gifting","text":"Thoughtful perfume picks for someone special."}}
+  ]}]
+}
+{% endschema %}

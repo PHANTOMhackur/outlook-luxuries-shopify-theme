@@ -1,0 +1,4 @@
+<section class="newsletter section-space"><div class="page-width newsletter__inner"><div><p class="eyebrow">STAY IN THE KNOW</p><h2>{{ section.settings.heading }}</h2><p>{{ section.settings.text }}</p></div>{% form 'customer', class: 'newsletter-form' %}<input type="hidden" name="contact[tags]" value="newsletter"><label class="visually-hidden" for="NewsletterEmail">Email</label><input id="NewsletterEmail" type="email" name="contact[email]" placeholder="Your email address" required><button class="button button--light" type="submit">Subscribe</button>{% endform %}</div></section>
+{% schema %}
+{"name":"Newsletter","settings":[{"type":"text","id":"heading","label":"Heading","default":"Enter the world of scent."},{"type":"textarea","id":"text","label":"Text","default":"New arrivals, private offers and fragrance stories delivered to your inbox."}],"presets":[{"name":"Newsletter"}]}
+{% endschema %}

@@ -1,0 +1,7 @@
+{
+  "sections": {
+    "main": {"type":"brand-grid","settings":{"heading":"Shop attars by brand"},"blocks":{"b1":{"type":"brand","settings":{"title":"Brand One"}},"b2":{"type":"brand","settings":{"title":"Brand Two"}},"b3":{"type":"brand","settings":{"title":"Brand Three"}},"b4":{"type":"brand","settings":{"title":"Brand Four"}}}},
+    "attars": {"type":"product-grid","settings":{"heading":"Featured attars","products_to_show":8}}
+  },
+  "order":["main","attars"]
+}

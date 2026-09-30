@@ -1,0 +1,330 @@
+<header class="site-header" data-header>
+  <div class="header-accent-line"></div>
+  <div class="page-width site-header__main">
+    <button class="icon-button mobile-menu-toggle" type="button" aria-label="Open menu" aria-controls="MobileNav" aria-expanded="false" data-mobile-menu-toggle>
+      <span class="icon icon--menu" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 7h18M3 12h18M3 17h18"/></svg>
+      </span>
+    </button>
+
+    <a class="brand-mark" href="{{ routes.root_url }}" aria-label="{{ section.settings.logo_text }} home">
+      {% if section.settings.logo_image != blank %}
+        {{ section.settings.logo_image | image_url: width: 420 | image_tag: class: 'brand-mark__image', widths: '140,210,280,420', loading: 'eager', alt: section.settings.logo_text }}
+      {% else %}
+        <span class="brand-mark__text">{{ section.settings.logo_text }}</span>
+      {% endif %}
+    </a>
+
+    <nav class="desktop-nav" aria-label="Primary navigation">
+      <a class="desktop-nav__link" href="{{ routes.root_url }}">Home</a>
+
+      <div class="nav-mega-item" data-mega-item>
+        <button class="desktop-nav__trigger" type="button" aria-expanded="false" aria-controls="MegaMenuPerfumes" data-mega-trigger>
+          Perfumes <span class="nav-caret" aria-hidden="true">⌄</span>
+        </button>
+        <div class="mega-menu" id="MegaMenuPerfumes" data-mega-panel>
+          <div class="page-width mega-menu__inner">
+            <div class="mega-menu__intro">
+              <p class="eyebrow">Explore the collection</p>
+              <h2>Perfumes</h2>
+              <p>{{ section.settings.perfume_menu_text }}</p>
+              <a class="mega-menu__view-all" href="{{ section.settings.perfume_page_url | default: '/pages/perfumes' }}">View all perfumes <span>→</span></a>
+            </div>
+            <div class="mega-menu__links">
+              {% if section.settings.perfume_menu != blank %}
+                {% for link in section.settings.perfume_menu.links limit: 4 %}
+                  <div class="mega-menu__column">
+                    <a class="mega-menu__column-title" href="{{ link.url }}">{{ link.title }}</a>
+                    {% if link.links != blank %}
+                      <div class="mega-menu__sub-links">
+                        {% for child_link in link.links limit: 8 %}
+                          <a href="{{ child_link.url }}">{{ child_link.title }}</a>
+                        {% endfor %}
+                      </div>
+                    {% endif %}
+                  </div>
+                {% endfor %}
+              {% else %}
+                <div class="mega-menu__column">
+                  <span class="mega-menu__column-title">Shop by type</span>
+                  <div class="mega-menu__sub-links">
+                    <a href="{{ section.settings.perfume_page_url | default: '/pages/perfumes' }}">All perfumes</a>
+                    <a href="/collections/bestsellers">Bestsellers</a>
+                    <a href="/collections/new-arrivals">New arrivals</a>
+                    <a href="/collections/men">Men</a>
+                    <a href="/collections/women">Women</a>
+                    <a href="/collections/unisex">Unisex</a>
+                  </div>
+                </div>
+                <div class="mega-menu__column">
+                  <span class="mega-menu__column-title">Fragrance families</span>
+                  <div class="mega-menu__sub-links">
+                    <a href="/collections/oud">Oud</a>
+                    <a href="/collections/woody">Woody</a>
+                    <a href="/collections/floral">Floral</a>
+                    <a href="/collections/fresh">Fresh</a>
+                    <a href="/collections/amber">Amber</a>
+                  </div>
+                </div>
+              {% endif %}
+            </div>
+            <div class="mega-menu__featured">
+              {% for block in section.blocks %}
+                {% if block.type == 'featured_brand' and block.settings.category == 'perfumes' %}
+                  <a class="mega-feature-card" href="{{ block.settings.link }}" {{ block.shopify_attributes }}>
+                    <div class="mega-feature-card__media">
+                      {% if block.settings.image != blank %}
+                        {{ block.settings.image | image_url: width: 560 | image_tag: widths: '240,360,560', loading: 'lazy', alt: block.settings.title }}
+                      {% else %}
+                        <span>{{ block.settings.title | slice: 0 }}</span>
+                      {% endif %}
+                    </div>
+                    <div class="mega-feature-card__body">
+                      <span>{{ block.settings.kicker }}</span>
+                      <strong>{{ block.settings.title }}</strong>
+                    </div>
+                  </a>
+                {% endif %}
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="nav-mega-item" data-mega-item>
+        <button class="desktop-nav__trigger" type="button" aria-expanded="false" aria-controls="MegaMenuAttars" data-mega-trigger>
+          Attars <span class="nav-caret" aria-hidden="true">⌄</span>
+        </button>
+        <div class="mega-menu" id="MegaMenuAttars" data-mega-panel>
+          <div class="page-width mega-menu__inner">
+            <div class="mega-menu__intro">
+              <p class="eyebrow">The concentrated edit</p>
+              <h2>Attars</h2>
+              <p>{{ section.settings.attar_menu_text }}</p>
+              <a class="mega-menu__view-all" href="{{ section.settings.attar_page_url | default: '/pages/attars' }}">View all attars <span>→</span></a>
+            </div>
+            <div class="mega-menu__links">
+              {% if section.settings.attar_menu != blank %}
+                {% for link in section.settings.attar_menu.links limit: 4 %}
+                  <div class="mega-menu__column">
+                    <a class="mega-menu__column-title" href="{{ link.url }}">{{ link.title }}</a>
+                    {% if link.links != blank %}
+                      <div class="mega-menu__sub-links">
+                        {% for child_link in link.links limit: 8 %}
+                          <a href="{{ child_link.url }}">{{ child_link.title }}</a>
+                        {% endfor %}
+                      </div>
+                    {% endif %}
+                  </div>
+                {% endfor %}
+              {% else %}
+                <div class="mega-menu__column">
+                  <span class="mega-menu__column-title">Shop by style</span>
+                  <div class="mega-menu__sub-links">
+                    <a href="{{ section.settings.attar_page_url | default: '/pages/attars' }}">All attars</a>
+                    <a href="/collections/oud-attars">Oud attars</a>
+                    <a href="/collections/musk-attars">Musk attars</a>
+                    <a href="/collections/amber-attars">Amber attars</a>
+                    <a href="/collections/floral-attars">Floral attars</a>
+                  </div>
+                </div>
+                <div class="mega-menu__column">
+                  <span class="mega-menu__column-title">Discover</span>
+                  <div class="mega-menu__sub-links">
+                    <a href="/collections/bestsellers">Bestsellers</a>
+                    <a href="/collections/new-arrivals">New arrivals</a>
+                    <a href="/collections/unisex">Unisex</a>
+                    <a href="/pages/attars#brand-directory">By brand</a>
+                  </div>
+                </div>
+              {% endif %}
+            </div>
+            <div class="mega-menu__featured">
+              {% for block in section.blocks %}
+                {% if block.type == 'featured_brand' and block.settings.category == 'attars' %}
+                  <a class="mega-feature-card" href="{{ block.settings.link }}" {{ block.shopify_attributes }}>
+                    <div class="mega-feature-card__media">
+                      {% if block.settings.image != blank %}
+                        {{ block.settings.image | image_url: width: 560 | image_tag: widths: '240,360,560', loading: 'lazy', alt: block.settings.title }}
+                      {% else %}
+                        <span>{{ block.settings.title | slice: 0 }}</span>
+                      {% endif %}
+                    </div>
+                    <div class="mega-feature-card__body">
+                      <span>{{ block.settings.kicker }}</span>
+                      <strong>{{ block.settings.title }}</strong>
+                    </div>
+                  </a>
+                {% endif %}
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="nav-mega-item" data-mega-item>
+        <button class="desktop-nav__trigger" type="button" aria-expanded="false" aria-controls="MegaMenuBrands" data-mega-trigger>
+          Brands <span class="nav-caret" aria-hidden="true">⌄</span>
+        </button>
+        <div class="mega-menu" id="MegaMenuBrands" data-mega-panel>
+          <div class="page-width mega-menu__inner mega-menu__inner--brands">
+            <div class="mega-menu__intro">
+              <p class="eyebrow">Curated names</p>
+              <h2>Brands</h2>
+              <p>{{ section.settings.brand_menu_text }}</p>
+              <a class="mega-menu__view-all" href="{{ section.settings.brands_page_url | default: '/pages/brands' }}">Explore all brands <span>→</span></a>
+            </div>
+            <div class="brand-mega-list">
+              {% if section.settings.brand_menu != blank %}
+                {% for link in section.settings.brand_menu.links limit: 12 %}
+                  <a class="brand-mega-link" href="{{ link.url }}"><span>{{ link.title }}</span><span aria-hidden="true">→</span></a>
+                {% endfor %}
+              {% else %}
+                <a class="brand-mega-link" href="/pages/brands"><span>Explore brands</span><span>→</span></a>
+                <a class="brand-mega-link" href="{{ section.settings.perfume_page_url | default: '/pages/perfumes' }}"><span>Perfume brands</span><span>→</span></a>
+                <a class="brand-mega-link" href="{{ section.settings.attar_page_url | default: '/pages/attars' }}"><span>Attar brands</span><span>→</span></a>
+              {% endif %}
+            </div>
+            <div class="mega-menu__featured mega-menu__featured--brand">
+              {% for block in section.blocks %}
+                {% if block.type == 'featured_brand' and block.settings.category == 'brands' %}
+                  <a class="mega-feature-card" href="{{ block.settings.link }}" {{ block.shopify_attributes }}>
+                    <div class="mega-feature-card__media">
+                      {% if block.settings.image != blank %}
+                        {{ block.settings.image | image_url: width: 560 | image_tag: widths: '240,360,560', loading: 'lazy', alt: block.settings.title }}
+                      {% else %}
+                        <span>{{ block.settings.title | slice: 0 }}</span>
+                      {% endif %}
+                    </div>
+                    <div class="mega-feature-card__body">
+                      <span>{{ block.settings.kicker }}</span>
+                      <strong>{{ block.settings.title }}</strong>
+                    </div>
+                  </a>
+                {% endif %}
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <a class="desktop-nav__link" href="{{ routes.all_products_collection_url }}">Shop All</a>
+      <a class="desktop-nav__link desktop-nav__link--sale" href="{{ section.settings.sale_page_url | default: '/collections/sale' }}">Offers</a>
+    </nav>
+
+    <div class="header-actions">
+      <a class="icon-button" href="{{ routes.search_url }}" aria-label="Search">
+        <svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="11" cy="11" r="6.5"></circle><path d="m16 16 5 5"></path></svg>
+      </a>
+      <a class="icon-button header-account" href="{{ routes.account_url }}" aria-label="Account">
+        <svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="8" r="3.3"></circle><path d="M5.5 19.5c.8-3 3-4.5 6.5-4.5s5.7 1.5 6.5 4.5"></path></svg>
+      </a>
+      <a class="icon-button cart-link" href="{{ routes.cart_url }}" aria-label="Cart">
+        <svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 5h2l1.5 11h10L19 8H7"></path><circle cx="9" cy="19" r="1.3"></circle><circle cx="16.5" cy="19" r="1.3"></circle></svg>
+        <span class="cart-link__count" data-cart-count>{{ cart.item_count }}</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="mobile-nav" id="MobileNav" data-mobile-nav>
+    <div class="mobile-nav__head">
+      <span>Shop Outlook</span>
+      <button class="icon-button" type="button" aria-label="Close menu" data-mobile-menu-close>
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 5l14 14M19 5 5 19"/></svg>
+      </button>
+    </div>
+    <a class="mobile-nav__plain" href="{{ routes.root_url }}">Home</a>
+
+    <details class="mobile-nav__group">
+      <summary>Perfumes <span>+</span></summary>
+      <div class="mobile-nav__submenu">
+        <a class="mobile-nav__all" href="{{ section.settings.perfume_page_url | default: '/pages/perfumes' }}">View all perfumes</a>
+        {% if section.settings.perfume_menu != blank %}
+          {% for link in section.settings.perfume_menu.links limit: 8 %}
+            <a href="{{ link.url }}">{{ link.title }}</a>
+            {% for child_link in link.links limit: 6 %}
+              <a class="mobile-nav__child" href="{{ child_link.url }}">{{ child_link.title }}</a>
+            {% endfor %}
+          {% endfor %}
+        {% else %}
+          <a href="/collections/bestsellers">Bestsellers</a>
+          <a href="/collections/new-arrivals">New arrivals</a>
+          <a href="/collections/men">Men</a>
+          <a href="/collections/women">Women</a>
+          <a href="/collections/unisex">Unisex</a>
+        {% endif %}
+      </div>
+    </details>
+
+    <details class="mobile-nav__group">
+      <summary>Attars <span>+</span></summary>
+      <div class="mobile-nav__submenu">
+        <a class="mobile-nav__all" href="{{ section.settings.attar_page_url | default: '/pages/attars' }}">View all attars</a>
+        {% if section.settings.attar_menu != blank %}
+          {% for link in section.settings.attar_menu.links limit: 8 %}
+            <a href="{{ link.url }}">{{ link.title }}</a>
+            {% for child_link in link.links limit: 6 %}
+              <a class="mobile-nav__child" href="{{ child_link.url }}">{{ child_link.title }}</a>
+            {% endfor %}
+          {% endfor %}
+        {% else %}
+          <a href="/collections/oud-attars">Oud attars</a>
+          <a href="/collections/musk-attars">Musk attars</a>
+          <a href="/collections/amber-attars">Amber attars</a>
+          <a href="/collections/floral-attars">Floral attars</a>
+        {% endif %}
+      </div>
+    </details>
+
+    <details class="mobile-nav__group">
+      <summary>Brands <span>+</span></summary>
+      <div class="mobile-nav__submenu">
+        <a class="mobile-nav__all" href="{{ section.settings.brands_page_url | default: '/pages/brands' }}">Explore all brands</a>
+        {% if section.settings.brand_menu != blank %}
+          {% for link in section.settings.brand_menu.links limit: 20 %}
+            <a href="{{ link.url }}">{{ link.title }}</a>
+          {% endfor %}
+        {% endif %}
+      </div>
+    </details>
+
+    <a class="mobile-nav__plain" href="{{ routes.all_products_collection_url }}">Shop All</a>
+    <a class="mobile-nav__plain mobile-nav__plain--sale" href="{{ section.settings.sale_page_url | default: '/collections/sale' }}">Offers</a>
+    <div class="mobile-nav__quick-links">
+      <a href="{{ routes.search_url }}">Search</a>
+      <a href="{{ routes.account_url }}">Account</a>
+      <a href="{{ routes.cart_url }}">Cart ({{ cart.item_count }})</a>
+    </div>
+  </div>
+  <div class="header-overlay" data-header-overlay></div>
+</header>
+
+{% schema %}
+{
+  "name":"Header",
+  "settings":[
+    {"type":"text","id":"logo_text","label":"Logo text","default":"OUTLOOK LUXURIES"},
+    {"type":"image_picker","id":"logo_image","label":"Logo image"},
+    {"type":"link_list","id":"perfume_menu","label":"Perfumes mega-menu"},
+    {"type":"link_list","id":"attar_menu","label":"Attars mega-menu"},
+    {"type":"link_list","id":"brand_menu","label":"Brands mega-menu"},
+    {"type":"textarea","id":"perfume_menu_text","label":"Perfumes intro text","default":"Discover perfumes by house, style and fragrance family."},
+    {"type":"textarea","id":"attar_menu_text","label":"Attars intro text","default":"Explore concentrated fragrance oils across classic and modern houses."},
+    {"type":"textarea","id":"brand_menu_text","label":"Brands intro text","default":"A curated edit of fragrance houses, presented in one destination."},
+    {"type":"url","id":"perfume_page_url","label":"Perfume landing page"},
+    {"type":"url","id":"attar_page_url","label":"Attar landing page"},
+    {"type":"url","id":"brands_page_url","label":"Brands page"},
+    {"type":"url","id":"sale_page_url","label":"Offers page"}
+  ],
+  "blocks":[
+    {"type":"featured_brand","name":"Featured brand","settings":[
+      {"type":"select","id":"category","label":"Show in","options":[{"value":"perfumes","label":"Perfumes"},{"value":"attars","label":"Attars"},{"value":"brands","label":"Brands"}],"default":"perfumes"},
+      {"type":"text","id":"kicker","label":"Kicker","default":"Featured house"},
+      {"type":"text","id":"title","label":"Title","default":"Your brand"},
+      {"type":"image_picker","id":"image","label":"Image"},
+      {"type":"url","id":"link","label":"Link"}
+    ]}
+  ],
+  "max_blocks":6
+}
+{% endschema %}

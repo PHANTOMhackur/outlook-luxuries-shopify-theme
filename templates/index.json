@@ -1,0 +1,14 @@
+{
+  "sections": {
+    "hero": {"type":"hero","settings":{}},
+    "categories": {"type":"category-cards","settings":{},"blocks":{"perfume":{"type":"category","settings":{"kicker":"01","title":"Perfumes","cta":"Explore Perfumes","link":"/pages/perfumes"}},"attar":{"type":"category","settings":{"kicker":"02","title":"Attars","cta":"Explore Attars","link":"/pages/attars"}}}},
+    "brands": {"type":"brand-grid","settings":{},"blocks":{"brand1":{"type":"brand","settings":{"title":"Brand One"}},"brand2":{"type":"brand","settings":{"title":"Brand Two"}},"brand3":{"type":"brand","settings":{"title":"Brand Three"}},"brand4":{"type":"brand","settings":{"title":"Brand Four"}}}},
+    "best": {"type":"product-grid","settings":{"heading":"Bestsellers","products_to_show":4}},
+    "notes": {"type":"notes-grid","settings":{}},
+    "feature": {"type":"feature-split","settings":{}},
+    "new": {"type":"product-grid","settings":{"heading":"New arrivals","products_to_show":4}},
+    "reviews": {"type":"testimonials","settings":{}},
+    "newsletter": {"type":"newsletter","settings":{}}
+  },
+  "order": ["hero","categories","brands","best","notes","feature","new","reviews","newsletter"]
+}

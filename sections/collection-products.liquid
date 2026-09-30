@@ -1,0 +1,4 @@
+<section class="page-width section-space"><div class="collection-head"><div><p class="eyebrow">COLLECTION</p><h1>{{ collection.title }}</h1>{% if collection.description != blank %}<div class="rte">{{ collection.description }}</div>{% endif %}</div><div class="collection-count">{{ collection.products_count }} products</div></div><div class="collection-layout"><aside class="collection-filter"><strong>Filter</strong><a href="{{ collection.url }}">All</a>{% for tag in collection.all_tags %}<a href="{{ collection.url }}/{{ tag | handleize }}">{{ tag }}</a>{% endfor %}</aside><div class="collection-products-grid">{% paginate collection.products by 24 %}{% for product in collection.products %}{% render 'product-card', product: product %}{% endfor %}{% endpaginate %}</div></div></section>
+{% schema %}
+{"name":"Collection products","settings":[]}
+{% endschema %}

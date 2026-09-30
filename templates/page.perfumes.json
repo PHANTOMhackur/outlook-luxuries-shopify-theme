@@ -1,0 +1,45 @@
+{
+  "sections": {
+    "hero": {
+      "type": "category-landing-hero",
+      "settings": {
+        "eyebrow": "THE PERFUME EDIT",
+        "heading": "Discover perfumes by house",
+        "text": "Explore a curated selection of fragrance houses, from modern signatures to timeless classics.",
+        "primary_label": "Shop all perfumes",
+        "secondary_label": "Browse brands"
+      }
+    },
+    "brands": {
+      "type": "brand-directory",
+      "settings": {
+        "eyebrow": "CURATED FRAGRANCE HOUSES",
+        "heading": "Shop perfumes by brand",
+        "subtext": "Choose a house to discover its signature perfumes, new releases and bestsellers.",
+        "show_alphabet": true,
+        "shop_all_label": "View all perfumes"
+      },
+      "blocks": {
+        "b1": {"type":"brand","settings":{"title":"Brand One","caption":"Explore perfumes"}},
+        "b2": {"type":"brand","settings":{"title":"Brand Two","caption":"Explore perfumes"}},
+        "b3": {"type":"brand","settings":{"title":"Brand Three","caption":"Explore perfumes"}},
+        "b4": {"type":"brand","settings":{"title":"Brand Four","caption":"Explore perfumes"}},
+        "b5": {"type":"brand","settings":{"title":"Brand Five","caption":"Explore perfumes"}},
+        "b6": {"type":"brand","settings":{"title":"Brand Six","caption":"Explore perfumes"}},
+        "b7": {"type":"brand","settings":{"title":"Brand Seven","caption":"Explore perfumes"}},
+        "b8": {"type":"brand","settings":{"title":"Brand Eight","caption":"Explore perfumes"}}
+      }
+    },
+    "guide": {
+      "type": "category-buying-guide"
+    },
+    "featured": {
+      "type": "product-grid",
+      "settings": {
+        "heading": "Featured perfumes",
+        "products_to_show": 8
+      }
+    }
+  },
+  "order": ["hero", "brands", "guide", "featured"]
+}

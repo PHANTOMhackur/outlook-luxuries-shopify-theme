@@ -1,0 +1,11 @@
+{
+  "files.associations": {
+    "*.liquid": "liquid"
+  },
+  "editor.formatOnSave": false,
+  "editor.wordWrap": "on",
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/.shopify": true
+  }
+}

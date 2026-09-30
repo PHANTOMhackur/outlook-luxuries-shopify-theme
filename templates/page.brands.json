@@ -1,0 +1,6 @@
+{
+  "sections": {
+    "main": {"type":"brand-grid","settings":{"heading":"All fragrance houses"},"blocks":{"b1":{"type":"brand","settings":{"title":"Brand One"}},"b2":{"type":"brand","settings":{"title":"Brand Two"}},"b3":{"type":"brand","settings":{"title":"Brand Three"}},"b4":{"type":"brand","settings":{"title":"Brand Four"}},"b5":{"type":"brand","settings":{"title":"Brand Five"}},"b6":{"type":"brand","settings":{"title":"Brand Six"}}}}
+  },
+  "order":["main"]
+}
